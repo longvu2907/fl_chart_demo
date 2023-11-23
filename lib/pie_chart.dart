@@ -52,23 +52,38 @@ class _StockPieChartState extends State<StockPieChart> {
         case 0:
           return PieChartSectionData(
             color: AppColors.contentColorGreen,
-            value: (263 / 576) * 100,
-            title: 'Tăng (263)',
+            value: (109 / 576) * 100,
+            title: "18.63%",
             radius: radius,
+            titleStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            badgeWidget: const Text('Tăng (109)'),
+            badgePositionPercentageOffset: 1.4,
           );
         case 1:
           return PieChartSectionData(
             color: AppColors.contentColorRed,
-            value: (93 / 576) * 100,
-            title: 'Giảm (93)',
+            value: (397 / 576) * 100,
+            title: '67.86%',
             radius: radius,
+            titleStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            badgeWidget: const Text('Giảm (397)'),
+            badgePositionPercentageOffset: 1.4,
           );
         case 2:
           return PieChartSectionData(
             color: AppColors.contentColorYellow,
-            value: (220 / 576) * 100,
-            title: 'Không đổi (220)',
+            value: (79 / 576) * 100,
+            title: '13.51%',
             radius: radius,
+            titleStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            badgeWidget: const Text('Không đổi (79)'),
+            badgePositionPercentageOffset: 1.4,
           );
         default:
           throw Exception('Oh no');
