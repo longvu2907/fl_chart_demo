@@ -58,7 +58,7 @@ class _StockPieChartState extends State<StockPieChart> {
             titleStyle: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
-            badgeWidget: const Text('Tăng (109)'),
+            badgeWidget: const Text('Tăng (109 CP)'),
             badgePositionPercentageOffset: 1.4,
           );
         case 1:
@@ -70,7 +70,7 @@ class _StockPieChartState extends State<StockPieChart> {
             titleStyle: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
-            badgeWidget: const Text('Giảm (397)'),
+            badgeWidget: const Text('Giảm (397 CP)'),
             badgePositionPercentageOffset: 1.4,
           );
         case 2:
@@ -82,7 +82,7 @@ class _StockPieChartState extends State<StockPieChart> {
             titleStyle: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
-            badgeWidget: const Text('Không đổi (79)'),
+            badgeWidget: const Text('Không đổi (79 CP)'),
             badgePositionPercentageOffset: 1.4,
           );
         default:

@@ -203,12 +203,17 @@ class _StockLineChartState extends State<StockLineChart> {
         reservedSize: 32,
         getTitlesWidget: (value, meta) => Padding(
           padding: const EdgeInsets.only(top: 8.0),
-          child: Text(
-            DateFormat('dd/MM/yyyy').format(
-              DateTime.fromMillisecondsSinceEpoch(value.toInt()),
-            ),
-            style: const TextStyle(
-              fontSize: 14,
+          child: Container(
+            margin: value == _maxX
+                ? const EdgeInsets.only(right: 70)
+                : const EdgeInsets.only(left: 70),
+            child: Text(
+              DateFormat('dd/MM/yyyy').format(
+                DateTime.fromMillisecondsSinceEpoch(value.toInt()),
+              ),
+              style: const TextStyle(
+                fontSize: 14,
+              ),
             ),
           ),
         ),
@@ -236,7 +241,7 @@ class _StockLineChartState extends State<StockLineChart> {
       aspectRatio: 1,
       child: Padding(
         padding: const EdgeInsets.only(
-          right: 20,
+          right: 10,
           left: 12,
           top: 24,
           bottom: 12,
@@ -246,6 +251,7 @@ class _StockLineChartState extends State<StockLineChart> {
             Padding(
               padding: const EdgeInsets.only(
                 left: 40,
+                bottom: 5,
               ),
               child: Row(
                 children: [
@@ -258,13 +264,15 @@ class _StockLineChartState extends State<StockLineChart> {
                                 const Text("O ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     )),
                                 Text(
                                   currentData.open.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 9,
+                                  style: TextStyle(
+                                    color: currentData.adjustedClose > 0
+                                        ? Colors.green
+                                        : Colors.red,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
@@ -274,13 +282,15 @@ class _StockLineChartState extends State<StockLineChart> {
                                 const Text("H ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     )),
                                 Text(
                                   currentData.high.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 9,
+                                  style: TextStyle(
+                                    color: currentData.adjustedClose > 0
+                                        ? Colors.green
+                                        : Colors.red,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
@@ -290,13 +300,15 @@ class _StockLineChartState extends State<StockLineChart> {
                                 const Text("L ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     )),
                                 Text(
                                   currentData.low.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 9,
+                                  style: TextStyle(
+                                    color: currentData.adjustedClose > 0
+                                        ? Colors.green
+                                        : Colors.red,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
@@ -306,13 +318,15 @@ class _StockLineChartState extends State<StockLineChart> {
                                 const Text("C ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     )),
                                 Text(
                                   currentData.close.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 9,
+                                  style: TextStyle(
+                                    color: currentData.adjustedClose > 0
+                                        ? Colors.green
+                                        : Colors.red,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],
@@ -322,13 +336,15 @@ class _StockLineChartState extends State<StockLineChart> {
                                 const Text("Vol ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 9,
+                                      fontSize: 12,
                                     )),
                                 Text(
                                   currentData.volume.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.green,
-                                    fontSize: 9,
+                                  style: TextStyle(
+                                    color: currentData.adjustedClose > 0
+                                        ? Colors.green
+                                        : Colors.red,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ],

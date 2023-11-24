@@ -35,13 +35,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white12,
         title: Text(title),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             StockLineChart(),
             SizedBox(height: 20),
             Text(
-              'Số lượng CP tăng, giảm, không đổi',
+              'Biến động giá',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -49,6 +49,14 @@ class HomePage extends StatelessWidget {
             ),
             StockPieChart(),
             SizedBox(height: 20),
+            Text(
+              'Phân bố dòng tiền',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
             StockBarChart(),
           ],
         ),
